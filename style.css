@@ -63,7 +63,7 @@ body {
     font-size: 48px;
     text-align: center;
     margin-bottom: 40px;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #ff3333;
     letter-spacing: 4px;
     animation: flicker 3s infinite alternate;
 }
@@ -81,7 +81,7 @@ body {
     font-size: 14px;
     line-height: 1.2;
     margin-bottom: 40px;
-    color: #00dd00;
+    color: #ff0000;
     white-space: pre;
 }
 
@@ -100,8 +100,8 @@ body {
 
 .menu-item:hover {
     background: #003300;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #ff3333;
+    text-shadow: 0 0 10px #ff3333;
     padding-left: 30px;
 }
 
