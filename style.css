@@ -8,7 +8,7 @@
 
 body {
     background: #000;
-    color: #00ff00;
+    color: #ff3333;
     font-family: 'VT323', monospace;
     font-size: 20px;
     line-height: 1.4;
@@ -131,7 +131,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
-    color: #00aa00;
+    color: #ffffff;
     opacity: 0.6;
 }
 
