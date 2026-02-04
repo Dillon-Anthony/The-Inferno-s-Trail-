@@ -21,6 +21,11 @@ function showAbout() {
 
 // Dev Options Function
 function showDevOptions() {
+    if(!devModeEnabled) 
+    {
+        alert('Dev mode not on');
+        return;
+    }
     const backgroundOptions = `
 Choose a background theme:
 
