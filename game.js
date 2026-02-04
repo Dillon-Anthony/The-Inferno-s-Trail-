@@ -25,6 +25,6 @@ document.addEventListener('keydown', (e) => {
     
     if (konamiCode.join('') === konamiSequence.join('')) {
         document.body.style.color = '#ff0000';
-        alert('🔥 CHEAT MODE ACTIVATED 🔥');
+        alert('dev mode');
     }
 });
