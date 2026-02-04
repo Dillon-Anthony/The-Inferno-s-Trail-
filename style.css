@@ -78,12 +78,14 @@ body {
 
 .ascii-art {
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.2;
     margin-bottom: 40px;
     color: #ff0000;
     white-space: pre;
 }
+
+/*Menu items*/
 
 .menu {
     margin-top: 60px;
@@ -125,14 +127,37 @@ body {
     50%, 100% { opacity: 0; }
 }
 
+/* footer and dev button*/
+
 .footer {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 20px;
-    color: #ffffff;
-    opacity: 0.6;
+    color: #ff3333;
+    opacity: 1;
+}
+
+.exit-dev-btn {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    padding: 5px 15px;
+    background: #330000;
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    transition: all 0.2s;
+}
+
+.exit-dev-btn:hover {
+    background: #ff3333;
+    color: #000;
+    text-shadow: none;
 }
 
 @media (max-width: 768px) {
@@ -143,6 +168,6 @@ body {
         padding: 20px;
     }
     .ascii-art {
-        font-size: 10px;
+        font-size: 16px;
     }
 }
