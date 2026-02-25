@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFERNAL TRAIL - Journey</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="crt-effect"></div>
+    
+    <div class="game-container">
+        <!-- Main text display area -->
+        <div class="text-display" id="textDisplay">
+            <div class="text-line">Initializing game...</div>
+        </div>
+        
+        <!-- Stats bar -->
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Health:</span>
+                <span id="healthStat">100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Morality:</span>
+                <span id="moralityStat">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Circle:</span>
+                <span id="circleStat">Dark Forest</span>
+            </div>
+        </div>
+        
+        <!-- Bottom controls -->
+        <div class="bottom-controls">
+            <button class="control-btn" onclick="returnToMenu()">Return</button>
+            <button class="control-btn" onclick="saveGame()">Save</button>
+        </div>
+    </div>
+    
+    <!-- Load game scripts -->
+    <script src="js/game/state.js"></script>
+    <script src="js/game/ui.js"></script>
+    <script src="js/game/engine.js"></script>
+    <script src="js/game/scenes.js"></script>
+</body>
+</html>

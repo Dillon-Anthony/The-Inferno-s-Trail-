@@ -5,7 +5,7 @@
 
 // Menu Functions
 function startGame() {
-    alert('Starting new journey... (Game engine coming soon!)');
+    window.location.href = 'game.html';
 }
 
 function loadGame() {

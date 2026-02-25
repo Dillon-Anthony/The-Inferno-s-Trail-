@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #0a0000 0%, #330000 100%);
+    color: #ff3333;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* CRT Effects */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 51, 51, 0.02) 51%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanline 8s linear infinite;
+    z-index: 10;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+.crt-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Main Game Container */
+.game-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1000px;  /* Reduced from 1200px (about 17% smaller) */
+    width: 90%;         /* Changed from 100% to 90% */
+    margin: 0 auto;
+}
+
+/* Text Display Area */
+.text-display {
+    flex: 1;
+    border: 2px solid #ff3333;
+    padding: 20px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 20px rgba(255, 51, 51, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.text-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.text-content::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.text-content::-webkit-scrollbar-thumb {
+    background: #ff3333;
+    border: 1px solid #000;
+}
+
+.text-line {
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Stats Bar */
+.stats-bar {
+    border: 2px solid #ff3333;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.stat {
+    margin: 0 15px;
+}
+
+.stat-label {
+    color: #ff6666;
+    margin-right: 5px;
+}
+
+/* Bottom Controls */
+.bottom-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    flex: 1;
+    border: 2px solid #ff3333;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ff3333;
+    padding: 15px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.control-btn:hover {
+    background: #ff3333;
+    color: #000;
+    box-shadow: 0 0 10px #ff3333;
+}
+
+.control-btn:active {
+    transform: scale(0.98);
+}
+
+/* Choices Display */
+.choices-container {
+    margin-top: auto;
+    padding: 15px;
+    border-top: 2px solid #ff3333;
+    background: rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.choice-item {
+    padding: 10px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.choice-item:hover {
+    background: rgba(255, 51, 51, 0.1);
+    border-left-color: #ff3333;
+    padding-left: 25px;
+}
+
+.choice-number {
+    color: #ff6666;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Loading indicator */
+.typing-indicator {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .game-container {
+        padding: 10px;
+    }
+    
+    .stats-bar {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .stat {
+        margin: 0;
+    }
+}
