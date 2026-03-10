@@ -3,8 +3,34 @@
 // ===========================================
 
 // Initialize the game when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    initializeGame();
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Load scene data first
+        displayText('Loading scene data...', true);
+        
+        await loadEssentialCircles();
+        
+        // Verify scenes loaded
+        const stats = getLoadStats();
+        console.log('Load complete:', stats);
+        
+        if (stats.totalScenes === 0) {
+            displayText('ERROR: No scenes loaded. Check console for details.', true);
+            displayText('Make sure dark_forest.json exists in data/circles/', true);
+            return;
+        }
+        
+        displayText(`Loaded ${stats.totalScenes} scenes successfully.`, true);
+        
+        // Then initialize game
+        setTimeout(() => {
+            initializeGame();
+        }, 500);
+        
+    } catch (error) {
+        console.error('Failed to load scenes:', error);
+        displayText('ERROR: Failed to load game data. Check console.', true);
+    }
 });
 
 // Initialize game

@@ -1,0 +1,45 @@
+{
+    "circle_name": "Limbo",
+    "description": "Circle 1 - The first circle of Hell, where virtuous non-Christians reside",
+    "scenes": {
+        "limbo_01": {
+            "id": "limbo_01",
+            "circle": "Limbo",
+            "clearScreen": true,
+            "text": [
+                "Your scene text here...",
+                "Multiple lines are supported",
+                "",
+                "Empty strings create blank lines"
+            ],
+            "choices": [
+                {
+                    "text": "Choice 1 text",
+                    "effects": {
+                        "health": 0,
+                        "morality": 10,
+                        "flags": ["optional_flag_name"]
+                    },
+                    "nextScene": "limbo_02"
+                },
+                {
+                    "text": "Choice 2 text",
+                    "effects": {
+                        "health": -5,
+                        "morality": -10
+                    },
+                    "nextScene": "limbo_03"
+                }
+            ]
+        },
+        "limbo_02": {
+            "id": "limbo_02",
+            "circle": "Limbo",
+            "clearScreen": false,
+            "text": [
+                "Next scene text..."
+            ],
+            "choices": []
+        }
+    }
+}
